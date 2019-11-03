@@ -59,6 +59,12 @@ class ListOfNotes : AppCompatActivity(),InterfaceActivityLauncher
 
         RecyclerForTasks.layoutManager=LinearLayoutManager(this)
         RecyclerForTasks.adapter=AdapterForRecycler(this)*/
+
+        buttonLogOgg.setOnClickListener {
+            pref.edit().clear().apply()
+            startActivity(Intent(this,EnterRegisterActivity::class.java))
+            finish()
+        }
     }
 
     override fun onResume() {

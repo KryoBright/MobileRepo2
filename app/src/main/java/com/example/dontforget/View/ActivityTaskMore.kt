@@ -2,6 +2,7 @@ package com.example.dontforget
 
 import android.content.Context
 import android.content.Intent
+import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -11,12 +12,14 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import kotlin.time.toDuration
 
 class ActivityTaskMore : AppCompatActivity(),InterfaceActivityLauncher {
     override fun launchActivity(intent : Intent) {
         startActivity(intent)
     }
     lateinit var task:TaskEntity
+    lateinit var prio:PriorityEntity
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_task_more)
@@ -30,6 +33,7 @@ class ActivityTaskMore : AppCompatActivity(),InterfaceActivityLauncher {
                 withContext(Dispatchers.Default)
                 {
                     task=newDataManip.taskById(pref.getLong("id",0))
+                    prio=newDataManip.getPriorities()[task.priority_id.toInt()]
                     i=1
                 }
             }

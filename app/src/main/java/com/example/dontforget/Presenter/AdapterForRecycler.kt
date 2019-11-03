@@ -75,7 +75,6 @@ class AdapterForRecycler( val context: Context,val launch:InterfaceActivityLaunc
         {
             (holder as ViewHolderItem).chkr.isChecked=allTasks[cat][ind-1].task_done
             if (categoriesList[cat].color!=null) {
-                holder.colorer.background = ColorDrawable(categoriesList[cat].color!!.toColorInt())
             }
             holder.taskDesk.text=allTasks[cat][ind-1].task_description
             holder.taskName.text=allTasks[cat][ind-1].task_title

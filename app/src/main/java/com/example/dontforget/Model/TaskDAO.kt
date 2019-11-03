@@ -13,7 +13,7 @@ interface TaskDAO {
     @Delete
     fun deleteTask(task:TaskEntity)
 
-    @Query("SELECT * FROM TaskEntity WHERE task_id == :ID")
+    @Query("SELECT * FROM TaskEntity WHERE task_id == :ID")//Пологаю,селекты не работают,поэтому пока я беру все
     fun getTaskByID(ID:Long): List<TaskEntity>
 
     @Query("SELECT * FROM TaskEntity")
