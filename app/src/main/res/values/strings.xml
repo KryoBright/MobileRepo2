@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">DontForget</string>
+    <string name="title_activity_list_of_notes">ListOfNotes</string>
+</resources>
